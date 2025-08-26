@@ -18,110 +18,67 @@
   <link rel="icon" href="logo.png">
 
   <style>
-    /* ===== Design System (dark-tech) ===== */
     :root{
-      --bg:#0b0f14;      /* sfondo */
-      --panel:#0f141b;   /* pannelli */
-      --ink:#eaf1f7;     /* testo principale */
-      --muted:#9fb0c0;   /* testo secondario */
-      --line:#1b2632;    /* bordi/griglie */
-      --brand:#00ffd1;   /* primario */
-      --accent:#62a8ff;  /* secondario */
-      --radius:14px;
-      --shadow:0 10px 30px rgba(0,0,0,.25);
+      --bg:#0b0f14; --panel:#0f141b; --ink:#eaf1f7; --muted:#9fb0c0;
+      --line:#1b2632; --brand:#00ffd1; --accent:#62a8ff;
+      --radius:14px; --shadow:0 10px 30px rgba(0,0,0,.25);
     }
-
-    /* Reset di base + tipografia */
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      background:var(--bg);
-      color:var(--ink);
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;
-      line-height:1.55;
-    }
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Inter,Arial,sans-serif;line-height:1.55}
     img{max-width:100%;display:block}
     a{color:var(--ink);text-decoration:none}
-    p{margin:0 0 1rem}
-    h1,h2,h3{margin:0 0 .6rem}
-
-    /* Layout */
     .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
     .section{padding:64px 0;border-bottom:1px solid var(--line)}
     .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     @media (max-width:980px){.grid-3{grid-template-columns:1fr}}
 
-    /* Nav */
-    .nav{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:blur(10px);
-      background:linear-gradient(180deg,rgba(11,15,20,.92),rgba(11,15,20,.72));
-      border-bottom:1px solid var(--line);
-    }
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);background:linear-gradient(180deg,rgba(11,15,20,.92),rgba(11,15,20,.72));border-bottom:1px solid var(--line)}
     .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
     .brand b{background:linear-gradient(90deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
     .logo{width:42px;height:42px;object-fit:contain;filter:drop-shadow(0 6px 14px rgba(0,0,0,.3))}
     .menu a{color:var(--muted);margin-left:18px;font-size:15px}
     .menu a:hover{color:var(--ink)}
-    .hamb{display:none}
-    @media (max-width:860px){
-      .menu{display:none}
-      .hamb{display:block;background:transparent;border:1px solid var(--line);color:var(--ink);padding:8px 12px;border-radius:10px}
-      .drawer{display:none;position:fixed;inset:60px 16px auto 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px}
-      .drawer a{display:block;padding:12px;border-bottom:1px solid var(--line);color:var(--muted)}
-      .drawer a:last-child{border-bottom:0}
-    }
 
-    /* Hero */
+    /* HERO */
     .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
     .hero h1{font-size:44px;line-height:1.05}
     .hero p{color:var(--muted)}
-    .cta{
-      display:inline-flex;gap:10px;margin-top:18px
-    }
-    .btn{
-      display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;border:1px solid var(--brand);
-      color:#081019;background:var(--brand)
-    }
+    .cta{display:inline-flex;gap:10px;margin-top:18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer;border:1px solid var(--brand);color:#081019;background:var(--brand)}
     .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
     .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .kpis .card{display:flex;flex-direction:column;gap:4px;text-align:center}
+    .kpis .card{text-align:center}
     .kpis .val{font-size:28px;font-weight:900}
     @media (max-width:980px){.hero{grid-template-columns:1fr}.kpis{grid-template-columns:1fr}}
 
-    /* Sezioni */
+    /* SECTIONS */
     .sub{color:var(--muted)}
     .h2{font-size:30px;margin-bottom:6px}
+    .note{font-size:12px;color:var(--muted)}
 
-    /* Contatti */
+    /* CONTACT */
     .contact form{display:grid;gap:10px}
     .input{background:#0b1219;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:12px;width:100%}
-    .note{font-size:12px;color:var(--muted)}
     .footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="nav" aria-label="Navigazione principale">
+  <!-- NAV -->
+  <nav class="nav">
     <div class="wrap nav-inner">
       <div class="brand">
-        <img src="logo.png" alt="Logo CerberusSec" class="logo" width="42" height="42">
+        <img src="./logo.png" alt="Logo CerberusSec" class="logo">
         <span>CERBERUS<b>SEC</b></span>
       </div>
-      <div class="menu" role="menubar">
-        <a href="#servizi" role="menuitem">Servizi</a>
-        <a href="#chi-siamo" role="menuitem">Chi siamo</a>
-        <a href="#contatti" role="menuitem">Contatti</a>
+      <div class="menu">
+        <a href="#servizi">Servizi</a>
+        <a href="#chi-siamo">Chi siamo</a>
+        <a href="#contatti">Contatti</a>
       </div>
-      <button class="hamb" aria-label="Apri menu" onclick="toggleDrawer()">Menu</button>
-    </div>
-    <div class="wrap drawer" id="drawer">
-      <a href="#servizi" onclick="toggleDrawer()">Servizi</a>
-      <a href="#chi-siamo" onclick="toggleDrawer()">Chi siamo</a>
-      <a href="#contatti" onclick="toggleDrawer()">Contatti</a>
     </div>
   </nav>
 
@@ -129,163 +86,116 @@
   <header class="wrap section hero" id="home">
     <div>
       <h1>Difendiamo il tuo business. <span style="color:var(--brand)">Cyber Security 24/7</span>.</h1>
-      <p class="sub">Siamo <strong>CerberusSec</strong>, azienda specializzata in sicurezza informatica offensiva e difensiva. Eroghiamo servizi di
-        <em>penetration test</em>, <em>red/purple team</em>, <em>monitoraggio</em> e <em>incident response</em> per proteggere applicazioni e infrastrutture,
-        con metodologie e reportistica di livello enterprise.</p>
+      <p class="sub">Siamo <strong>CerberusSec</strong>, azienda specializzata in sicurezza informatica offensiva e difensiva. Offriamo
+        <em>penetration test</em>, <em>red/purple team</em>, <em>monitoraggio</em> e <em>incident response</em> per proteggere applicazioni e infrastrutture con metodologie enterprise.</p>
       <div class="cta">
         <a class="btn" href="#contatti">Richiedi una consulenza</a>
         <a class="btn ghost" href="#servizi">Vedi i servizi</a>
       </div>
     </div>
+
+    <!-- KPI aggiornati -->
     <div class="card" aria-label="Perché scegliere CerberusSec">
       <div class="kpis">
+        <!-- KPI 1: Attacchi in Europa -->
         <div class="card">
-          <span class="val">+120</span>
-          <span>Assessment/anno</span>
+          <span class="val">≈ 2.200/giorno</span>
+          <span>Attacchi in Europa</span>
+          <span class="note" style="margin-top:6px;display:block">+30 % in 5 anni</span>
         </div>
+        <!-- KPI 2: Standard & Framework -->
         <div class="card">
-          <span class="val">ISO</span>
-          <span>Metodologie conformi</span>
+          <span class="val">Std &amp; Framework</span>
+          <span>NIS2 · ISO/IEC 27001</span>
+          <span class="note" style="margin-top:6px;display:block">NIST CSF · CIS Controls</span>
         </div>
+        <!-- KPI 3: 24/7 -->
         <div class="card">
           <span class="val">24/7</span>
           <span>Threat monitoring</span>
         </div>
       </div>
-      <p class="note" style="margin-top:8px">KPI indicativi — personalizzali in base ai tuoi numeri reali.</p>
     </div>
   </header>
 
   <!-- SERVIZI -->
-  <section class="wrap section" id="servizi" aria-labelledby="tit-servizi">
-    <h2 class="h2" id="tit-servizi">Servizi</h2>
+  <section class="wrap section" id="servizi">
+    <h2 class="h2">Servizi</h2>
     <p class="sub">Approccio end-to-end: prevenzione, rilevazione, risposta e miglioramento continuo.</p>
-
-    <div class="grid-3" role="list">
-      <article class="card" role="listitem">
-        <h3>Penetration Test</h3>
-        <p>Web, mobile, rete e cloud. Evidenze tecniche riproducibili, priorità di rischio e remediation guidata.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Red &amp; Purple Team</h3>
-        <p>Simulazioni realistiche dell’avversario per misurare detection/response e potenziare il SOC.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>SOC &amp; Monitoring</h3>
-        <p>Telemetria centralizzata, correlazione eventi e use case su misura per ridurre MTTR e MTTD.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Hardening &amp; Zero-Trust</h3>
-        <p>Identity, segmentazione, policy least-privilege, sicurezza applicativa e DevSecOps.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Incident Response</h3>
-        <p>Contenimento, forensics, eradication e ripristino operativo con report post-incident.</p>
-      </article>
-
-      <article class="card" role="listitem">
-        <h3>Compliance</h3>
-        <p>Linee guida NIS2, ISO/IEC 27001, CIS Controls e best practice di settore.</p>
-      </article>
+    <div class="grid-3">
+      <div class="card"><h3>Penetration Test</h3><p>Web, mobile, rete e cloud. Evidenze tecniche, priorità di rischio e remediation guidata.</p></div>
+      <div class="card"><h3>Red &amp; Purple Team</h3><p>Simulazioni realistiche per testare detection/response e migliorare il SOC.</p></div>
+      <div class="card"><h3>SOC &amp; Monitoring</h3><p>Telemetria centralizzata, correlazione eventi e use case su misura.</p></div>
+      <div class="card"><h3>Hardening &amp; Zero-Trust</h3><p>Identity, segmentazione, least-privilege, sicurezza applicativa e DevSecOps.</p></div>
+      <div class="card"><h3>Incident Response</h3><p>Contenimento, forensics, ripristino operativo con report post-incident.</p></div>
+      <div class="card"><h3>Compliance</h3><p>NIS2, ISO/IEC 27001, CIS Controls e best practice di settore.</p></div>
     </div>
   </section>
 
   <!-- CHI SIAMO -->
-  <section class="wrap section" id="chi-siamo" aria-labelledby="tit-chi">
-    <h2 class="h2" id="tit-chi">Chi siamo</h2>
-    <p class="sub">Operiamo come estensione del tuo team IT/SecOps. Lavoriamo con trasparenza, metriche chiare e obiettivi di rischio concreti.</p>
+  <section class="wrap section" id="chi-siamo">
+    <h2 class="h2">Chi siamo</h2>
+    <p class="sub">Operiamo come estensione del tuo team IT/SecOps, con trasparenza e metriche concrete.</p>
     <div class="card">
       <ul style="margin:0; padding-left:18px; line-height:1.8">
-        <li>Metodologie standardizzate e ripetibili, integrate con pipeline e strumenti esistenti.</li>
-        <li>Threat-modeling e roadmap di sicurezza pragmatiche per massimizzare il ROI.</li>
+        <li>Metodologie standardizzate integrate con pipeline e strumenti esistenti.</li>
+        <li>Threat-modeling e roadmap pragmatiche per massimizzare il ROI.</li>
         <li>Impegno su riservatezza, integrità e disponibilità dei dati (principi CIA).</li>
       </ul>
     </div>
   </section>
 
   <!-- CONTATTI -->
-  <section class="wrap section contact" id="contatti" aria-labelledby="tit-contatti">
-    <h2 class="h2" id="tit-contatti">Contattaci</h2>
+  <section class="wrap section contact" id="contatti">
+    <h2 class="h2">Contattaci</h2>
     <p class="sub">Parla con un nostro esperto: risposta entro 1 giorno lavorativo.</p>
-
     <div class="card">
-      <!-- GitHub Pages è statico: usiamo mailto per comporre l'email -->
       <form onsubmit="return cerbMailto(this)">
-        <input class="input" type="text" name="name" placeholder="Nome e cognome" aria-label="Nome e cognome" required>
-        <input class="input" type="email" name="email" placeholder="Email" aria-label="Email" required>
-        <textarea class="input" name="message" rows="5" placeholder="Raccontaci le tue esigenze" aria-label="Messaggio" required></textarea>
+        <input class="input" type="text" name="name" placeholder="Nome e cognome" required>
+        <input class="input" type="email" name="email" placeholder="Email" required>
+        <textarea class="input" name="message" rows="5" placeholder="Raccontaci le tue esigenze" required></textarea>
         <button class="btn" type="submit">Invia richiesta</button>
         <div id="cerbMsg" class="note" style="margin-top:6px"></div>
       </form>
-
-      <p class="note" style="margin-top:10px">Preferisci scriverci direttamente? <a href="mailto:info@cerberussec.it">info@cerberussec.it</a></p>
+      <p class="note" style="margin-top:10px">Oppure scrivi a: <a href="mailto:info@cerberussec.it">info@cerberussec.it</a></p>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="wrap footer">
     <div style="display:flex;gap:10px;align-items:center;justify-content:center;margin-bottom:8px">
-      <img src="logo.png" alt="" width="22" height="22" style="opacity:.8">
+      <img src="./logo.png" alt="" width="22" height="22" style="opacity:.8">
       <strong>CerberusSec</strong>
     </div>
     © <span id="y"></span> CerberusSec · Tutti i diritti riservati
   </footer>
 
-  <!-- Accessibilità, interazioni leggere -->
   <script>
-    // Mobile drawer
-    function toggleDrawer(){
-      const d = document.getElementById('drawer');
-      d.style.display = (d.style.display === 'block') ? 'none' : 'block';
-    }
-
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
-        const id = a.getAttribute('href').slice(1);
-        const el = document.getElementById(id);
-        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth'});}
       });
     });
 
-    // Mailto composto (resta lato client, niente backend)
+    // Mailto
     function cerbMailto(f){
-      const name = f.name.value.trim();
-      const email = f.email.value.trim();
-      const msg = f.message.value.trim();
-      if(!name || !email || !msg){ return false; }
-      const to = 'info@cerberussec.it'; // ← cambia qui con la tua email aziendale
-      const subject = encodeURIComponent('Richiesta contatto — CerberusSec');
-      const body = encodeURIComponent(
-        'Nome: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        'Messaggio:\n' + msg + '\n'
-      );
-      const info = document.getElementById('cerbMsg');
-      if(info) info.textContent = 'Apro il tuo client email per inviare il messaggio…';
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      const name=f.name.value.trim();
+      const email=f.email.value.trim();
+      const msg=f.message.value.trim();
+      if(!name||!email||!msg) return false;
+      const to="info@cerberussec.it"; // cambia qui la tua email
+      const subject=encodeURIComponent("Richiesta contatto — CerberusSec");
+      const body=encodeURIComponent("Nome: "+name+"\nEmail: "+email+"\n\nMessaggio:\n"+msg+"\n");
+      document.getElementById("cerbMsg").textContent="Apro il client email…";
+      window.location.href=`mailto:${to}?subject=${subject}&body=${body}`;
       return false;
     }
 
-    // Anno corrente nel footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-
-  <!-- Dati strutturati (Organization) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "CerberusSec",
-    "url": "https://example.com",
-    "logo": "https://example.com/logo.png",
-    "sameAs": [],
-    "description": "Azienda di cyber security offensiva e difensiva: Pentest, Red/Purple Team, SOC & Monitoring, Incident Response, Compliance."
-  }
+    // Anno
+    document.getElementById('y').textContent=new Date().getFullYear();
   </script>
 </body>
 </html>

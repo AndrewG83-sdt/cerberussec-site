@@ -80,6 +80,8 @@
     .contact form{display:grid;gap:10px}
     .input{background:#0b1219;border:1px solid var(--line);color:var(--ink);border-radius:12px;padding:12px;width:100%}
     .footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+    .form-check{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+    .form-check input{margin-top:3px}
   </style>
 </head>
 <body>
@@ -114,19 +116,16 @@
     <!-- KPI aggiornati -->
     <div class="card" aria-label="Perché scegliere CerberusSec">
       <div class="kpis">
-        <!-- KPI 1: Attacchi in Europa -->
         <div class="card">
           <span class="val">2.200/giorno</span>
           <span>Attacchi in Europa</span>
           <span class="note" style="margin-top:6px;display:block">+30 % in 5 anni</span>
         </div>
-        <!-- KPI 2: Standard & Framework -->
         <div class="card">
           <span class="val">Standard &amp; Framework</span>
           <span>NIS2 · ISO/IEC 27001</span>
           <span class="note" style="margin-top:6px;display:block">NIST CSF · CIS Controls</span>
         </div>
-        <!-- KPI 3: 24/7 -->
         <div class="card">
           <span class="val">24/7</span>
           <span>Threat monitoring</span>
@@ -171,6 +170,13 @@
         <input class="input" type="text" name="name" placeholder="Nome e cognome" required>
         <input class="input" type="email" name="email" placeholder="Email" required>
         <textarea class="input" name="message" rows="5" placeholder="Raccontaci le tue esigenze" required></textarea>
+
+        <!-- Checkbox privacy (obbligatoria) -->
+        <label class="form-check">
+          <input type="checkbox" id="privacy" required>
+          <span>Dichiaro di aver letto l’<a href="/privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</span>
+        </label>
+
         <button class="btn" type="submit">Invia richiesta</button>
         <div id="cerbMsg" class="note" style="margin-top:6px"></div>
       </form>
@@ -184,7 +190,7 @@
       <img src="./logo.png" alt="" width="22" height="22" style="opacity:.8">
       <strong>CerberusSec</strong>
     </div>
-    © <span id="y"></span> CerberusSec · Tutti i diritti riservati
+    © <span id="y"></span> CerberusSec · Tutti i diritti riservati · <a href="/privacy.html">Privacy Policy</a>
   </footer>
 
   <script>
@@ -203,17 +209,15 @@
       const name=(f.name.value||'').trim();
       const email=(f.email.value||'').trim();
       const msg=(f.message.value||'').trim();
-      if(!name||!email||!msg) return false;
+      const consent=document.getElementById('privacy');
+      if(!name||!email||!msg||!consent||!consent.checked) return false;
 
-      // Costruzione sicura dei parametri (già encoded, niente header injection)
       const to="info@cerberussec.it"; // cambia qui la tua email
       const subject=encodeURIComponent("Richiesta contatto — CerberusSec");
       const body=encodeURIComponent("Nome: "+name+"\nEmail: "+email+"\n\nMessaggio:\n"+msg+"\n");
 
       const infoEl=document.getElementById("cerbMsg");
       if(infoEl) infoEl.textContent="Apro il client email…";
-
-      // Navigazione esplicita verso mailto
       window.location.href=`mailto:${to}?subject=${subject}&body=${body}`;
       return false;
     }

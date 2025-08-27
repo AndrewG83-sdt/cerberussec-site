@@ -17,6 +17,23 @@
 
   <link rel="icon" href="logo.png">
 
+  <!-- Security meta headers (compatibili con GitHub Pages) -->
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src  'self' 'unsafe-inline';
+    img-src    'self' data:;
+    font-src   'self';
+    connect-src 'self';
+    object-src 'none';
+    base-uri   'self';
+    frame-ancestors 'none';
+    form-action 'self' mailto:;
+    navigate-to 'self' mailto:;
+    upgrade-insecure-requests;
+  ">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+
   <style>
     :root{
       --bg:#0b0f14; --panel:#0f141b; --ink:#eaf1f7; --muted:#9fb0c0;
@@ -171,6 +188,7 @@
   </footer>
 
   <script>
+    'use strict';
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
@@ -182,20 +200,29 @@
 
     // Mailto
     function cerbMailto(f){
-      const name=f.name.value.trim();
-      const email=f.email.value.trim();
-      const msg=f.message.value.trim();
+      const name=(f.name.value||'').trim();
+      const email=(f.email.value||'').trim();
+      const msg=(f.message.value||'').trim();
       if(!name||!email||!msg) return false;
+
+      // Costruzione sicura dei parametri (già encoded, niente header injection)
       const to="info@cerberussec.it"; // cambia qui la tua email
       const subject=encodeURIComponent("Richiesta contatto — CerberusSec");
       const body=encodeURIComponent("Nome: "+name+"\nEmail: "+email+"\n\nMessaggio:\n"+msg+"\n");
-      document.getElementById("cerbMsg").textContent="Apro il client email…";
+
+      const infoEl=document.getElementById("cerbMsg");
+      if(infoEl) infoEl.textContent="Apro il client email…";
+
+      // Navigazione esplicita verso mailto
       window.location.href=`mailto:${to}?subject=${subject}&body=${body}`;
       return false;
     }
 
     // Anno
-    document.getElementById('y').textContent=new Date().getFullYear();
+    (function(){
+      const el=document.getElementById('y');
+      if(el) el.textContent=new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>

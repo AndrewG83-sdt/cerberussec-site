@@ -8,9 +8,11 @@ Mantengo online sia i progetti che considero oggi piu rappresentativi del mio la
 
 - **Featured projects**: repository che rappresentano meglio il mio livello attuale.
 - **Case studies**: analisi tecniche e report strutturati su incidenti, malware, IOC e rischio cyber.
+- **Technical tooling**: repository che mostrano script, automazione, playbook e workflow difensivi.
 - **Learning journey**: esercitazioni, laboratori e repository del percorso Epicode mantenuti volutamente pubblici.
 
 Per una guida rapida ai repository di studio vedi [LEARNING-JOURNEY.md](./LEARNING-JOURNEY.md).
+Per una vista orientata agli strumenti vedi [TOOLING.md](./TOOLING.md).
 
 ## Featured Projects
 
@@ -32,6 +34,16 @@ Per una guida rapida ai repository di studio vedi [LEARNING-JOURNEY.md](./LEARNI
 - [23andMe-Breach-2023-study-case](https://github.com/AndrewG83-sdt/23andMe-Breach-2023-study-case)
   Case study difensivo basato su fonti pubbliche.
 
+## Technical Tooling
+
+Questi repository aiutano a mostrare che il profilo non contiene solo report e case study, ma anche workflow tecnici, script e strumenti riutilizzabili:
+
+- [Cyber-nmap-playbook](https://github.com/AndrewG83-sdt/Cyber-nmap-playbook)
+- [port-scanner-didattico](https://github.com/AndrewG83-sdt/port-scanner-didattico)
+- [linux-hardening-starter](https://github.com/AndrewG83-sdt/linux-hardening-starter)
+- [Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux](https://github.com/AndrewG83-sdt/Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux)
+- [opencti-starter-notes](https://github.com/AndrewG83-sdt/opencti-starter-notes)
+
 ## Focus
 
 - Incident response e analisi post-incidente
@@ -39,6 +51,7 @@ Per una guida rapida ai repository di studio vedi [LEARNING-JOURNEY.md](./LEARNI
 - IOC, log analysis, Wireshark e Splunk
 - Vulnerability management, hardening e strumenti come Nmap e OpenVAS
 - Reportistica tecnica e traduzione del rischio in linguaggio chiaro
+- Tooling difensivo, playbook e workflow ripetibili
 
 ## Learning Journey
 

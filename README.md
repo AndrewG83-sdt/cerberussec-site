@@ -1,20 +1,17 @@
 # Andrea Giovannoni | Cybersecurity Portfolio Hub
 
-Questo repository funziona come punto di accesso al mio GitHub pubblico.
+Questo repository e il punto di ingresso del mio GitHub pubblico.
 
-Mantengo online sia i progetti che considero oggi piu rappresentativi del mio lavoro in cybersecurity, threat analysis e incident response, sia le repository create durante il percorso Epicode. Non voglio cancellare quella parte del percorso: preferisco contestualizzarla e mostrarla come evoluzione reale delle mie competenze.
+Qui tengo insieme tre cose:
+- i progetti e i case study che oggi mi rappresentano meglio
+- le repository piu orientate a strumenti, script e workflow pratici
+- il materiale del percorso Epicode, che lascio pubblico per mostrare l'evoluzione del lavoro
 
-## Come leggere il profilo
+Per orientarti meglio:
+- [LEARNING-JOURNEY.md](./LEARNING-JOURNEY.md) per le repository di studio
+- [TOOLING.md](./TOOLING.md) per la parte piu operativa e tecnica
 
-- **Featured projects**: repository che rappresentano meglio il mio livello attuale.
-- **Case studies**: analisi tecniche e report strutturati su incidenti, malware, IOC e rischio cyber.
-- **Technical tooling**: repository che mostrano script, automazione, playbook e workflow difensivi.
-- **Learning journey**: esercitazioni, laboratori e repository del percorso Epicode mantenuti volutamente pubblici.
-
-Per una guida rapida ai repository di studio vedi [LEARNING-JOURNEY.md](./LEARNING-JOURNEY.md).
-Per una vista orientata agli strumenti vedi [TOOLING.md](./TOOLING.md).
-
-## Featured Projects
+## In Evidenza
 
 - [healthcare-saas-supply-chain-intelligence-analysis-2026](https://github.com/AndrewG83-sdt/healthcare-saas-supply-chain-intelligence-analysis-2026)
   Intelligence assessment su rischio sistemico nella supply chain healthcare SaaS.
@@ -28,43 +25,37 @@ Per una vista orientata agli strumenti vedi [TOOLING.md](./TOOLING.md).
 - [Cyber-nmap-playbook](https://github.com/AndrewG83-sdt/Cyber-nmap-playbook)
   Playbook operativo per scansioni Nmap ripetibili, report e confronto tra run.
 
-- [Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux](https://github.com/AndrewG83-sdt/Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux)
-  Script di supporto e automazione in contesto laboratorio.
+- [linux-hardening-starter](https://github.com/AndrewG83-sdt/linux-hardening-starter)
+  Starter prudente per hardening Linux con backup e rollback.
+
+- [cerberussec-site](https://github.com/AndrewG83-sdt/cerberussec-site)
+  Hub del portfolio e punto di partenza del profilo.
+
+## Altri Repo Utili
 
 - [23andMe-Breach-2023-study-case](https://github.com/AndrewG83-sdt/23andMe-Breach-2023-study-case)
-  Case study difensivo basato su fonti pubbliche.
-
-## Technical Tooling
-
-Questi repository aiutano a mostrare che il profilo non contiene solo report e case study, ma anche workflow tecnici, script e strumenti riutilizzabili:
-
-- [Cyber-nmap-playbook](https://github.com/AndrewG83-sdt/Cyber-nmap-playbook)
-- [port-scanner-didattico](https://github.com/AndrewG83-sdt/port-scanner-didattico)
-- [linux-hardening-starter](https://github.com/AndrewG83-sdt/linux-hardening-starter)
 - [Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux](https://github.com/AndrewG83-sdt/Script-Python-per-Avvio-di-OpenVAS-GVM-su-Kali-Linux)
+- [port-scanner-didattico](https://github.com/AndrewG83-sdt/port-scanner-didattico)
 - [opencti-starter-notes](https://github.com/AndrewG83-sdt/opencti-starter-notes)
 
 ## Focus
 
-- Incident response e analisi post-incidente
-- Malware analysis e studio delle TTP
+- incident response e analisi post-incidente
+- malware analysis e studio delle TTP
 - IOC, log analysis, Wireshark e Splunk
-- Vulnerability management, hardening e strumenti come Nmap e OpenVAS
-- Reportistica tecnica e traduzione del rischio in linguaggio chiaro
-- Tooling difensivo, playbook e workflow ripetibili
+- vulnerability management, hardening e strumenti come Nmap e OpenVAS
+- reportistica tecnica e traduzione del rischio in linguaggio chiaro
+- tooling difensivo, playbook e workflow ripetibili
 
 ## Learning Journey
 
 Molti repository con prefissi come `ex`, `pratica`, `laboratorio`, oppure con date nel nome, nascono dal mio percorso di studio con Epicode e da esercitazioni pratiche svolte nel 2025.
 
-Li mantengo pubblici per tre motivi:
-1. documentano la progressione reale del mio apprendimento;
-2. mostrano costanza, disciplina e volume di lavoro;
-3. distinguono il materiale di studio dai progetti che oggi considero portfolio principale.
+Li tengo pubblici perche fanno parte del percorso e mostrano come il lavoro si e evoluto nel tempo.
 
 ## Nota
 
-Tutti i repository devono essere letti in chiave esclusivamente difensiva, didattica o di ricerca autorizzata. Non pubblico contenuti con finalita operative offensive.
+Tutti i repository vanno letti in chiave difensiva, didattica o di ricerca autorizzata.
 
 ## Contatti
 
